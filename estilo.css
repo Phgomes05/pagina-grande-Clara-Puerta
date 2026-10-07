@@ -35,13 +35,18 @@ footer { grid-area: rodape; }
 
 .cabecalho {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     min-height: 82px;
     padding: 12px 24px;
     background: linear-gradient(90deg, var(--verde-palmeiras) 0 33%, var(--preto-corinthians) 33% 66%, var(--vermelho-sp) 66% 100%);
     color: var(--branco);
     border-bottom: 5px solid var(--amarelo-destaque);
+}
+.cabecalho-conteudo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
 }
 .identidade { display: flex; flex-direction: column; }
 .identidade strong { font-size: 21px; letter-spacing: .3px; }
@@ -135,7 +140,8 @@ footer p { margin: 0; }
 
 @media (max-width: 800px) {
     body { grid-template-columns: 1fr; grid-template-rows: auto auto minmax(0, 1fr) auto; grid-template-areas: "topo" "lado" "conteudo" "rodape"; }
-    .cabecalho { align-items: flex-start; flex-direction: column; gap: 10px; }
+    .cabecalho { align-items: stretch; }
+    .cabecalho-conteudo { align-items: flex-start; flex-direction: column; gap: 10px; }
     .lateral { padding: 16px; border-right: 0; border-bottom: 5px solid var(--verde-brilhante); }
     .lateral ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
     .lateral li { margin: 0; }
